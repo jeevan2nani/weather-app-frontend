@@ -1,8 +1,8 @@
-
+import styles from "../CssComponents/home.module.css"
 export default function Table({data}){
 
     return(
-        <table>
+        <table className={styles.table}>
                 <thead>
                     <tr>
                         <th>City</th>

@@ -3,6 +3,7 @@ import axios from 'axios';
 import Table from "./Components/table";
 import Navbar from "./Components/navbar";
 import { useRouter } from "next/router";
+import styles from "./CssComponents/home.module.css"
 export default function Home(){
 
     const data = [
@@ -12,30 +13,31 @@ export default function Home(){
     ]
     
 
-    // const [tasks,setTasks] = useState([]);
+    const [tasks,setTasks] = useState([]);
 
     // useEffect( ()=>{
     //     fetchTasks();
     // } ,[]);
 
-    // const fetchTasks = async ()=>{
-    //     try{
-    //         const response = await axios.get('http://localhost:3000/user/weather');
-    //         setTasks(response.data);
-    //         console.log(tasks);
-    //     } catch(error){
-    //         console.error(error);
-    //     }
-    // };
+    const fetchTasks = async ()=>{
+        try{
+            const response = await axios.get('http://localhost:3000/user/weather');
+            setTasks(response.data);
+            console.log(tasks);
+        } catch(error){
+            console.error(error);
+        }
+    };
     const router = useRouter();
     const HandleSubmit = (e)=>{
-        router.replace('/')
+        router.reload();
     }
+    fetchTasks();
     return(
         <div>
             <Navbar/>
-            <Table data = {data}/>
-            <button onSubmit={HandleSubmit}>Refresh</button>
+            <Table data = {tasks}/>
+            <button onClick={HandleSubmit} className={styles.submit}>Refresh</button>
         </div>
     );
 

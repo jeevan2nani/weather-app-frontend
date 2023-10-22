@@ -1,14 +1,11 @@
 import { useRouter } from "next/router";
-
+import styles from "../CssComponents/login.module.css"
+import Link from "next/link";
 const Navbar = ()=>{
-    const router = useRouter();
-    const HandleClick = ()=>{
-        router.push('/login');
-    }
     return(
-        <div>
-            <h1>Weather Data</h1>
-            <button onClick={HandleClick}>Admin Login</button>
+        <div className={styles.navContainer}>
+            <h1 className={styles.title}>Weather Data</h1>
+            <Link href={'/login'}>Admin Login</Link>
         </div>
     );
 }

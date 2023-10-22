@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
-import { headers } from "@/next.config";
 import { useRouter } from "next/router";
+import styles from '../CssComponents/login.module.css';
 
 const LoginForm = ()=>{
     const [email,setEmail] = useState('');
@@ -34,15 +34,13 @@ const LoginForm = ()=>{
     }
 
     return(
-        <div>
+        <div className={styles.loginContainer}>
+            <h1>Log In</h1>
             <form onSubmit={HandleSubmit}> 
-                <label>Email</label>
-                <input type="email" value={email} onChange={(e)=> setEmail(e.target.value)}  />
+                <input type="email" value={email} onChange={(e)=> setEmail(e.target.value)} className={styles.inputField} placeholder="Email"/>
+                <input type="password" value ={password} onChange = {(e)=> setPassword(e.target.value)} className={styles.inputField} placeholder="Password" />
 
-                <label>Password</label>
-                <input type="password" value ={password} onChange = {(e)=> setPassword(e.target.value)} />
-
-                <button type="submit">Submit</button>
+                <button type="submit" className={styles.submitButton}>Submit</button>
             </form>
             {errorMessage && <p className="error-message">{errorMessage}</p>}
         </div>
