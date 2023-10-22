@@ -15,9 +15,9 @@ export default function Home(){
 
     const [tasks,setTasks] = useState([]);
 
-    // useEffect( ()=>{
-    //     fetchTasks();
-    // } ,[]);
+    useEffect( ()=>{
+        fetchTasks();
+    } ,[]);
 
     const fetchTasks = async ()=>{
         try{
@@ -32,7 +32,6 @@ export default function Home(){
     const HandleSubmit = (e)=>{
         router.reload();
     }
-    fetchTasks();
     return(
         <div>
             <Navbar/>
