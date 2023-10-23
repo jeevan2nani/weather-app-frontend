@@ -14,13 +14,15 @@ const Addcity = ()=>{
                 headers:{"Content-Type":"application/json"},
             });
 
-            console.log(response.data.message);
+            console.log(response);
 
             if(response.data.message){
                 setConfirmationMessage(response.data.message);
+                setCityname('');
             }
             else{
-                setConfirmationMessage(`City is added to the DataBase Sucessfully!`);
+                setConfirmationMessage(response.data);
+                setCityname('');
             }
         }
         catch(error){

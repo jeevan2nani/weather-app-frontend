@@ -26,6 +26,8 @@ const LoginForm = ()=>{
             }
             else{
                 setErrorMessage('Invalid Credentials');
+                setEmail('');
+                setPassword('');
             }
         }
         catch(error){
@@ -42,7 +44,7 @@ const LoginForm = ()=>{
 
                 <button type="submit" className={styles.submitButton}>Submit</button>
             </form>
-            {errorMessage && <p className="error-message">{errorMessage}</p>}
+            {errorMessage && <p className={styles.redAlert}>{errorMessage}</p>}
         </div>
     );
 }
