@@ -21,7 +21,7 @@ const LoginForm = ()=>{
                 },
             })
             console.log(response);
-            if(response.data){
+            if(response.data.status !== 401){
                 router.replace('/admin');
             }
             else{

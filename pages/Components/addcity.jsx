@@ -16,12 +16,8 @@ const Addcity = ()=>{
 
             console.log(response);
 
-            if(response.data.message){
-                setConfirmationMessage(response.data.message);
-                setCityname('');
-            }
-            else{
-                setConfirmationMessage(response.data);
+            if(response.data.Message){
+                setConfirmationMessage(response.data.Message);
                 setCityname('');
             }
         }
