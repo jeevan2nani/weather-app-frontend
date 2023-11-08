@@ -1,0 +1,14 @@
+.box{
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.box select{
+    max-width: 400px;
+    margin: 25px auto;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}

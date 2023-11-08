@@ -1,6 +1,6 @@
 import styles from "../CssComponents/home.module.css"
 export default function Table({data}){
-
+    
     return(
         <table className={styles.table}>
                 <thead>
@@ -17,7 +17,7 @@ export default function Table({data}){
 
                 <tbody>
                     {data.map( (task)=>(
-                        <tr key = {task.id}>
+                        <tr key = {task.name}>
                             <th>{task.name}</th>
                             <th>{task.temp}</th>
                             <th>{task.temp_min}</th>
