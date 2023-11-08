@@ -14,7 +14,7 @@ const Dropdown = ({cities})=>{
 
     const fetchData = async (city)=>{
         try{
-            const response = await axios.get(`http://localhost:3000/user/city?city=${city}`);
+            const response = await axios.get(`http://localhost:3005/user/city?city=${city}`);
             console.log("Response",response.data);
             setData(response.data);
         }
@@ -36,8 +36,8 @@ const Dropdown = ({cities})=>{
                 <select value={selectedOption} onChange={handleChange}>
                     <option value="">Select the city</option>
                     {
-                        cities.map((city)=>(
-                            <option key={city.index} value={city.name}>{city.name}</option>
+                        cities && cities.map((city)=>(
+                            <option key={city.id} value={city.name}>{city.name}</option>
                         ))
                     }
                 </select>

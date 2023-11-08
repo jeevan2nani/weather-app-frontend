@@ -9,7 +9,7 @@ const Addcity = ()=>{
         const dataToSend = {"name":cityname};
 
         try{
-            const response =  await axios.post('http://localhost:3000/admin/add',dataToSend,{
+            const response =  await axios.post('http://localhost:3005/admin/add',dataToSend,{
                 withCredentials: true,
                 headers:{"Content-Type":"application/json"},
             });

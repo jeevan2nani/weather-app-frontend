@@ -12,7 +12,7 @@ const DropDown = ()=>{
 
     const fetchCities = async()=>{
         try{
-            const response = await axios.get('http://localhost:3000/user/all');
+            const response = await axios.get('http://localhost:3005/user/all');
             setCities(response.data);
             console.log(cities);
             console.log("CHeck");

@@ -21,7 +21,7 @@ export default function Home(){
 
     const fetchTasks = async ()=>{
         try{
-            const response = await axios.get('http://localhost:3000/user/weather');
+            const response = await axios.get('http://localhost:3005/user/weather');
             setTasks(response.data);
             console.log(tasks);
         } catch(error){

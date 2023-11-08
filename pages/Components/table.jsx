@@ -16,8 +16,8 @@ export default function Table({data}){
                 </thead>
 
                 <tbody>
-                    {data.map( (task)=>(
-                        <tr key = {task.name}>
+                    { data && data.map( (task)=>(
+                        <tr key = {task.id}>
                             <th>{task.name}</th>
                             <th>{task.temp}</th>
                             <th>{task.temp_min}</th>
