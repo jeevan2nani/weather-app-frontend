@@ -21,17 +21,17 @@ const LoginForm = ()=>{
                 },
             })
             console.log(response);
-            if(response.data.status !== 401){
+            if(response.status === 201) {
                 router.replace('/admin');
             }
-            else{
+        }
+        catch(error){
+            if(error.response.status=== 401){
                 setErrorMessage('Invalid Credentials');
                 setEmail('');
                 setPassword('');
             }
-        }
-        catch(error){
-            console.log("Error while Making API Request",error);
+            else console.log("Error while Making API Request",error);
         }
     }
 

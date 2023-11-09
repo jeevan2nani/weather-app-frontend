@@ -3,9 +3,9 @@ import { useRouter } from "next/router";
 import styles from '../CssComponents/login.module.css'
 const AdminNav = ()=>{
     const router = useRouter();
-    const HandleEvent = (e)=>{
+    const HandleEvent = async (e)=>{
         try{
-            const response = axios.post('http://localhost:3005/admin/signout',{},{withCredentials: true,});
+            const response = await axios.post('http://localhost:3005/admin/signout',{},{withCredentials: true,});
             console.log(response);
             router.replace('/login');
         }

@@ -17,11 +17,15 @@ const Addcity = ()=>{
             console.log(response);
 
             if(response.data.Message){
-                setConfirmationMessage(response.data.Message);
+                setConfirmationMessage(response.data.message);
                 setCityname('');
             }
         }
         catch(error){
+            if(error.response.status === 401){
+                setConfirmationMessage(error.response.data.message);
+                
+            }
             console.log("Error While making the api request",error);
         }
 
