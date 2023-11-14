@@ -4,6 +4,7 @@ import Table from "./Components/table";
 import Navbar from "./Components/navbar";
 import { useRouter } from "next/router";
 import styles from "./CssComponents/home.module.css"
+import Head from "next/head";
 export default function Home(){
 
     // const data = [
@@ -35,9 +36,9 @@ export default function Home(){
 
     return(
         <>
-            <head>
+            <Head>
                 <title>Weather App</title>
-            </head>
+            </Head>
             <div>
                 <Navbar/>
                 <Table data = {tasks}/>
