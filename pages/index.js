@@ -34,11 +34,16 @@ export default function Home(){
     }
 
     return(
-        <div>
-            <Navbar/>
-            <Table data = {tasks}/>
-            <button onClick={HandleSubmit} className={styles.submit}>Refresh</button>
-        </div>
+        <>
+            <head>
+                <title>Weather App</title>
+            </head>
+            <div>
+                <Navbar/>
+                <Table data = {tasks}/>
+                <button onClick={HandleSubmit} className={styles.submit}>Refresh</button>
+            </div>
+        </>
     );
 
 
