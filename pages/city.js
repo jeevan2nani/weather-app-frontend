@@ -11,7 +11,7 @@ const CityWithParam = ()=>{
     const fetchTask = async (name)=>{
         try{
             console.log(name);
-            const URL = `http://localhost:3005/user/city?city=${name.name}`;
+            const URL = `http://localhost/backend/user/city?city=${name.name}`;
             console.log(URL);
             const response = await axios.get(URL);
             setData(response.data);

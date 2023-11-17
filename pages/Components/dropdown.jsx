@@ -14,7 +14,7 @@ const Dropdown = ({cities})=>{
 
     const fetchData = async (city)=>{
         try{
-            const response = await axios.get(`http://localhost:3005/user/city?city=${city}`);
+            const response = await axios.get(`http://localhost/backend/user/city?city=${city}`);
             console.log("Response",response.data);
             setData(response.data);
         }

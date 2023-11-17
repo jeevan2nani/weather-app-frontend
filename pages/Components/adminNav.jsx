@@ -5,7 +5,7 @@ const AdminNav = ()=>{
     const router = useRouter();
     const HandleEvent = async (e)=>{
         try{
-            const response = await axios.post('http://localhost:3005/admin/signout',{},{withCredentials: true,});
+            const response = await axios.post('http://localhost/backend/admin/signout',{},{withCredentials: true,});
             console.log(response);
             router.replace('/login');
         }
